@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Renz Alvarez | BSIT Student & Developer</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-box">
+            <img id="logo" src="../image/a3dd212965b4d0a0d9abc1004b524c69.jpg" alt="Logo">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="certification.html">Certification</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <!-- Left - Profile Picture -->
+                <div class="hero-left">
+                    <div class="profile-wrapper">
+                        <div class="profile-glow"></div>
+                        <div class="profile-border">
+                            <div class="profile-overlay"></div>
+                            <div class="profile-picture">
+                                <img src="../image/profile.png" alt="Renz Alvarez Profile" class="profile-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Content -->
+                <div class="hero-right">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Hello, I'm
+                            <span class="hero-name">Renz Alvarez</span>
+                        </h1>
+
+                        <!-- Terminal-style text effect -->
+                        <div class="terminal-box">
+                            <div class="terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                                <span class="terminal-label">terminal</span>
+                            </div>
+                            <div class="terminal-text">
+                                <span class="terminal-prompt">&gt;</span>
+                                <span id="typing-text"></span>
+                                <span class="cursor" id="cursor">_</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="hero-description">
+                        Passionate about building innovative solutions through code.
+                        Specializing in full-stack development, database design, and
+                        creating seamless user experiences.
+                    </p>
+
+                    <!-- Tech stack indicators -->
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="tech-icon">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            <span>Frontend</span>
+                        </div>
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="tech-icon">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+                                <path d="M3 12a9 3 0 0 0 18 0"></path>
+                            </svg>
+                            <span>Backend</span>
+                        </div>
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="tech-icon">
+                                <polyline points="4 17 10 11 4 5"></polyline>
+                                <line x1="12" y1="19" x2="20" y2="19"></line>
+                            </svg>
+                            <span>DevOps</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="scrollToElement('projects')">
+                            View Projects
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToElement('contact')">
+                            Get In Touch
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Renz Alvarez. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation - Renz Alvarez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 4px solid #0ea5e9;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0ea5e9;
+            border: 4px solid #0ea5e9;
+            padding: 8px 16px;
+            background-color: #1a1a1a;
+            box-shadow: 4px 4px 0px #0ea5e9;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 6px 6px 0px #0ea5e9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 3px solid rgba(100, 116, 139, 0.3);
+            background-color: rgba(26, 26, 26, 0.5);
+            color: #64748b;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            border-color: #0ea5e9;
+            color: #0ea5e9;
+        }
+
+        .nav-link.active {
+            background-color: #0ea5e9;
+            color: #0a0a0a;
+            border-color: #0ea5e9;
+            box-shadow: 3px 3px 0px rgba(100, 116, 139, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 12px 16px;
+            }
+
+            .logo {
+                font-size: 18px;
+                padding: 6px 12px;
+                box-shadow: 3px 3px 0px #0ea5e9;
+            }
+
+            .nav-links {
+                gap: 4px;
+                flex-wrap: wrap;
+            }
+
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                padding: 8px 12px;
+            }
+
+            .logo {
+                font-size: 14px;
+                padding: 4px 8px;
+                border-width: 2px;
+                box-shadow: 2px 2px 0px #0ea5e9;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-link {
+                padding: 4px 8px;
+                font-size: 11px;
+                border-width: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">&lt;DEV/&gt;</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active" data-section="Home">Home</a>
+                <a href="about.html" class="nav-link" data-section="About">About</a>
+                <a href="project.html" class="nav-link" data-section="Projects">Projects</a>
+                <a href="certification.html" class="nav-link" data-section="Certifications">Certifications</a>
+                <a href="contact.html" class="nav-link" data-section="Contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Handle scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Update active section
+            updateActiveSection();
+        });
+
+        // Update active nav link based on current page
+        function updateActiveSection() {
+            const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'home.html')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize on page load
+        updateActiveSection();
+
+        // Smooth scroll behavior
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href.includes('#')) {
+                    e.preventDefault();
+                    const target = document.getElementById(href.split('#')[1]);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
