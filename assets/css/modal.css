@@ -1,0 +1,114 @@
+/* ==================== CUSTOM MODAL SYSTEM ==================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(1, 6, 14, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: rgba(2, 8, 17, 0.88);
+    border: 3px solid #0ea5e9;
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.3), 12px 12px 0px rgba(100, 116, 139, 0.4);
+    width: 90%;
+    max-width: 450px;
+    padding: 32px;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(20px);
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    margin-bottom: 24px;
+}
+
+.modal-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    font-weight: 900;
+    color: #0ea5e9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.modal-content {
+    font-family: 'Inter', sans-serif;
+    color: #d2e3f3;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+/* Modal specific buttons */
+.modal-btn {
+    padding: 12px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 3px solid #0ea5e9;
+    background: transparent;
+    color: #0ea5e9;
+}
+
+.modal-btn-confirm {
+    background: #0ea5e9;
+    color: #000;
+}
+
+.modal-btn-confirm:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+.modal-btn-cancel {
+    border-color: #334155;
+    color: #64748b;
+}
+
+.modal-btn-cancel:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+@media (max-width: 480px) {
+    .modal-container {
+        padding: 24px;
+        box-shadow: 8px 8px 0px rgba(100, 116, 139, 0.4);
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-btn {
+        width: 100%;
+    }
+}

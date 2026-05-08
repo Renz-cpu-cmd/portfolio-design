@@ -1,0 +1,220 @@
+/* ==================== PROJECTS SECTION ==================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.project-card {
+    background: rgba(2, 8, 17, 0.34);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(125, 211, 252, 0.28);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 26px 60px rgba(2, 8, 17, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    border-color: #0ea5e9;
+    box-shadow: 8px 8px 0px #0ea5e9;
+    transform: translateY(-8px);
+}
+
+.project-card-large {
+    grid-column: span 2;
+}
+
+.project-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, #000000, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+}
+
+.project-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #000000;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #0ea5e9;
+    margin: 0;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+    color: #ffffff;
+}
+
+.project-description {
+    color: #a8bdd3;
+    text-shadow: 0 1px 10px rgba(2, 8, 17, 0.45);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tag {
+    background: #1a1a1a;
+    border: 2px solid #0ea5e9;
+    padding: 6px 12px;
+    color: #0ea5e9;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 600;
+}
+
+.projects-button-container {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.projects-view-all-btn {
+    background: transparent;
+    color: #0ea5e9;
+    padding: 16px 40px;
+    font-weight: 900;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 18px;
+    border: 4px solid #0ea5e9;
+    box-shadow: 8px 8px 0px #64748b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.projects-view-all-btn:hover {
+    box-shadow: 8px 8px 0px #0ea5e9;
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.projects-manage-link {
+    display: inline-block;
+    margin-left: 24px;
+    margin-top: 12px;
+    color: #0ea5e9;
+    text-decoration: none;
+    border: 2px solid #0ea5e9;
+    padding: 10px 18px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.projects-manage-link:hover {
+    background: #0ea5e9;
+    color: #000000;
+}
+
+.project-date {
+    color: #a8bdd3;
+    text-shadow: 0 1px 10px rgba(2, 8, 17, 0.45);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.project-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 1200px) {
+    .projects-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card-large {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card {
+        box-shadow: 6px 6px 0px #64748b;
+    }
+
+    .project-card:hover {
+        box-shadow: 6px 6px 0px #0ea5e9;
+    }
+
+    .project-image-container {
+        height: 180px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-title {
+        font-size: 18px;
+    }
+
+    .projects-view-all-btn {
+        width: 100%;
+        padding: 14px 24px;
+        box-shadow: 6px 6px 0px #64748b;
+    }
+
+    .projects-view-all-btn:hover {
+        box-shadow: 6px 6px 0px #0ea5e9;
+    }
+}
+
+/* ==================== LIVE WALLPAPER OVERRIDES ==================== */
+.project-card {
+    background: rgba(2, 8, 17, 0.62) !important;
+    backdrop-filter: blur(11px);
+}
