@@ -1,0 +1,333 @@
+/* ==================== HOME HERO SECTION ==================== */
+.hero-section {
+    min-height: calc(100vh - 73px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    background-color: transparent;
+}
+
+.hero-container {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    perspective: 1400px;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.profile-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.profile-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.95) 0%, rgba(14, 165, 233, 0.48) 42%, transparent 74%);
+    filter: blur(100px);
+    opacity: 0.36;
+    border-radius: 50%;
+}
+
+.profile-border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    background: linear-gradient(145deg, rgba(14, 165, 233, 0.38), rgba(103, 232, 249, 0.12));
+    border: 1px solid rgba(186, 230, 253, 0.28);
+    backdrop-filter: blur(14px);
+    animation: morph 8s ease-in-out infinite;
+    box-shadow: 0 18px 40px rgba(2, 8, 17, 0.45);
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-right {
+    flex: 1.2;
+    transform: translateZ(36px);
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    text-shadow: 0 16px 38px rgba(2, 8, 17, 0.62);
+}
+
+.hero-name {
+    color: #0ea5e9;
+    display: block;
+    text-shadow: 0 0 28px rgba(125, 211, 252, 0.5);
+}
+
+.terminal-box {
+    background: rgba(8, 15, 31, 0.55);
+    border: 1px solid rgba(125, 211, 252, 0.46);
+    backdrop-filter: blur(22px);
+    box-shadow: 0 28px 60px rgba(2, 8, 17, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    margin-bottom: 32px;
+    max-width: 500px;
+    transform: translateZ(20px);
+}
+
+.terminal-header {
+    background: rgba(15, 23, 42, 0.52);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(125, 211, 252, 0.4);
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.terminal-label {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #64748b;
+    text-shadow: 0 1px 10px rgba(2, 8, 17, 0.45);
+}
+
+.terminal-text {
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.terminal-prompt {
+    color: #0ea5e9;
+    margin-right: 8px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background: #0ea5e9;
+    animation: blink 1s infinite;
+}
+
+.hero-description {
+    color: #d2e3f3;
+    text-shadow: 0 1px 10px rgba(2, 8, 17, 0.45);
+    font-size: 16px;
+    margin-bottom: 32px;
+    max-width: 550px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+.tech-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #0ea5e9;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 16px 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 900;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 4px solid #0ea5e9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #0ea5e9;
+    color: #000000;
+    box-shadow: 8px 8px 0px #64748b;
+}
+
+.btn-primary:hover {
+    box-shadow: 4px 4px 0px #64748b;
+    transform: translate(4px, 4px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0ea5e9;
+    box-shadow: 8px 8px 0px #64748b;
+}
+
+.btn-secondary:hover {
+    background: rgba(14, 165, 233, 0.05);
+    box-shadow: 4px 4px 0px #64748b;
+    transform: translate(4px, 4px);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 1200px) {
+    .hero-container {
+        gap: 60px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .profile-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 48px 20px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 48px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .profile-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+
+    .terminal-box {
+        margin: 0 auto 32px auto;
+    }
+
+    .tech-stack,
+    .button-group {
+        justify-content: center;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 16px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .profile-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    .terminal-box {
+        max-width: 100%;
+    }
+
+    .terminal-text {
+        font-size: 14px;
+        padding: 16px;
+    }
+
+    .tech-stack {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .terminal-text {
+        font-size: 13px;
+    }
+}
+
+/* ==================== LIVE WALLPAPER OVERRIDES ==================== */
+.hero-section {
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+}
