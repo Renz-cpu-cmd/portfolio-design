@@ -34,11 +34,11 @@
         <div class="nav-box">
             <img id="logo" src="image/a3dd212965b4d0a0d9abc1004b524c69.jpg" alt="Logo">
             <ul>
-                <li><a href="pages/index.php" class="">Home</a></li>
-                <li><a href="pages/about.php" class="">About</a></li>
-                <li><a href="pages/certification.php" class="">Certification</a></li>
-                <li><a href="pages/project.php" class="">Project</a></li>
-                <li><a href="pages/contact.php" class="active">Contact</a></li>
+                <li><a href="index.html" class="">Home</a></li>
+                <li><a href="about.html" class="">About</a></li>
+                <li><a href="certification.html" class="">Certification</a></li>
+                <li><a href="project.html" class="">Project</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <span class="nav-swipe-indicator" aria-hidden="true"></span>
         </div>
@@ -164,50 +164,7 @@
 <script>
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-
-    const form = e.target;
-    const submitBtn = document.getElementById('submitBtn');
-    const loader = document.getElementById('loader');
-    const btnText = submitBtn.querySelector('.btn-text');
-
-    // Disable button and show loader
-    submitBtn.disabled = true;
-    loader.style.display = 'inline-block';
-    btnText.style.display = 'none';
-
-    const formData = new FormData(form);
-
-    fetch('admin/handle_contact.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(async response => {
-        const text = await response.text();
-        try {
-            return JSON.parse(text);
-        } catch (e) {
-            console.error('Server returned non-JSON response:', text);
-            throw new Error('Invalid server response');
-        }
-    })
-    .then(data => {
-        if (data.status === 'success') {
-            alert(data.message, 'Message Sent');
-            form.reset();
-        } else {
-            alert('Error: ' + data.message, 'Transmission Failed');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An unexpected error occurred. Please try again later.', 'System Error');
-    })
-    .finally(() => {
-        // Re-enable button and hide loader
-        submitBtn.disabled = false;
-        loader.style.display = 'none';
-        btnText.style.display = 'inline';
-    });
+    window.alert('The contact form is disabled on the static GitHub Pages version. Please use the email link below to get in touch.', 'Contact Form');
 });
 </script>
 <footer>
